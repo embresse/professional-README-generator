@@ -2,6 +2,11 @@
 
 Below you will find the following requirements and expectations for creating and generating a professional README! This task involved inquirer and node. Please read below for more detailed information.
 
+## SCREENCASTIFY LINK
+
+https://drive.google.com/file/d/1FCufh6dCUKNBO9QvGmvyrY5vj2wpvr8j/view
+
+
 ## Your Task
 
 When creating an open source project on GitHub, it’s important to have a high-quality README for the app. This should include what the app is for, how to use the app, how to install it, how to report issues, and how to make contributions&mdash;this last part increases the likelihood that other developers will contribute to the success of the project. 
