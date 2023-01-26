@@ -36,7 +36,8 @@ function renderLicenseLink(license) {
 }
 
 // TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
+// If there is no license, return an empty string 
+
 function renderLicenseSection(license) {
   if (license === "BOOST") {
     licenseSection = 
@@ -60,7 +61,7 @@ function renderLicenseSection(license) {
     SHALL THE COPYRIGHT HOLDERS OR ANYONE DISTRIBUTING THE SOFTWARE BE LIABLE
     FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE,
     ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
-    DEALINGS IN THE SOFTWARE. \n";`
+    DEALINGS IN THE SOFTWARE. \n`;
   }
   if (license === "Apache") {
     licenseSection = 
@@ -87,12 +88,12 @@ function renderLicenseSection(license) {
     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF 
     MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR 
     ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH 
-    THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n";`;
+    THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n`;
   }
   else {
     " ";
   }
-  return licenseLink;
+  return licenseSection;
 }
 
 // TODO: Create a function to generate markdown for README
@@ -103,6 +104,16 @@ function generateMarkdown(data) {
   content += `
   
   # ${data.title}
+
+  ## Table of Contents:
+  
+  <a href="#description">Description</a> \n
+  <a href="#installation">Installation</a> \n
+  <a href="#usage">Usage</a> \n
+  <a href="#credits">Credits</a> \n
+  <a href="#license">License</a> \n
+  <a href="#testing">Testing</a> \n
+  <a href="#questions">Questions</a> \n
 
 
   ## Description
