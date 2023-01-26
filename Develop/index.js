@@ -1,71 +1,77 @@
 // TODO: Include packages needed for this application
-
+// 'fs' and 'inquirer' packages used for application
 const fs = require("fs")
 const inquirer = require('inquirer');
+
+//generateMarkdown.js stored in variable
 const generateMarkdown = require('./utils/generateMarkdown')
 
-const confirmInput = (dataInput) => dataInput ? true : (console.log("You must input a value to continue"), false);
+// variable storing function to validate user input
+const valInput = (userInput) => userInput ? true : (console.log("You must input a value to continue"), false);
 
 // TODO: Create an array of questions for user input
+// Questions about user for README file
 const questions = [
     {
         type: 'input',
         message: 'What is your Github username?',
         name: 'username',
-        confirm: confirmInput,
+        validate: valInput,
       },
       {
         type: 'input',
         message: 'What is the TITLE of your Project?',
         name: 'title',
-        confirm: confirmInput,
+        validate: valInput,
       },
       {
         type: 'input',
         message: 'Please enter a DESCRIPTION of your project:',
         name: 'description',
-        confirm: confirmInput,
+        validate: valInput,
       },
     
       {
         type: 'input',
         message: 'What do you need to INSTALL for this project?',
         name: 'installation',
-        confirm: confirmInput,
+        validate: valInput,
     },
     {
         type: 'input',
         message: 'What is the USAGE for this project?',
         name: 'usage',
-        confirm: confirmInput,
+        validate: valInput,
     },
     {
         type: 'input',
         message: 'What CREDITS would you list for this project?',
         name: 'credits',
-        confirm: confirmInput,
+        validate: valInput,
     },
 
     {
         type: 'input',
         name: 'test',
         message: 'What steps must be made to test you application?',
-        confirm: confirmInput,
+        validate: valInput,
     },
     
     { 
       type: 'list',
       message: 'Please, choose one LICENSE for this project',
       name: 'license',
-      choices: ['MIT', 'Apache', 'GPL', 'ISC', 'None'],
-      confirm: confirmInput,
+      choices: ['BOOST', 'Apache', 'MIT', 'None'],
+      validate: valInput,
     },
 ];
 
 // TODO: Create a function to write README file
+// writeToFile function for writing README
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) => 
     err ? console.error(err) : console.log('SUCCESS! You made your README!')
+    // log tells user README file made successfully
     )
 }
 
@@ -74,6 +80,7 @@ function init() {
     inquirer.prompt(questions)
         .then((data) => {
             writeToFile('newREADME.md', generateMarkdown(data));
+            // call writeToFile function with doc name and generateMarkdown(data) arguments
             
             console.log(data);
         });
